@@ -2,6 +2,7 @@ package com.pc.config;
 
 import com.alibaba.dubbo.common.utils.IOUtils;
 import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.pc.beanfactory.DubboBeanFacotory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +25,6 @@ import java.util.List;
 public class CommonServlet extends HttpServlet{
 
     private Logger LOGGER  = LoggerFactory.getLogger(CommonServlet.class);
-
-
 
     @Autowired
     private DubboBeanFacotory beanFactory;
@@ -80,6 +80,15 @@ public class CommonServlet extends HttpServlet{
 
         // 获取远程调用对象
         Object bean = beanFactory.getBean(className);
+
+        try {
+            Object result = calledMethod.invoke(bean,objects.toArray());
+            System.out.println(JSONObject.toJSONString(result));
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("OK");
         resp.getWriter().write("pengchi good");

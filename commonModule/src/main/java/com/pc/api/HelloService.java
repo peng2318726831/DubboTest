@@ -1,4 +1,4 @@
-package com.pc.dubbo;
+package com.pc.api;
 
 
 public interface HelloService {

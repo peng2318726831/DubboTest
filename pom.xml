@@ -12,6 +12,7 @@
         <module>provider</module>
         <module>consumer</module>
         <module>testModule</module>
+        <module>commonModule</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
