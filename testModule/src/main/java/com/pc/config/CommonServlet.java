@@ -38,7 +38,7 @@ public class CommonServlet extends HttpServlet{
     }
 
     @Override
-    protected void service(HttpServletRequest req, HttpServletResponse resp)
+    public void service(HttpServletRequest req, HttpServletResponse resp)
         throws IOException {
 
         ErrorResult errorResult = null;
@@ -109,6 +109,8 @@ public class CommonServlet extends HttpServlet{
         sendData(resp,result);
         return;
     }
+
+
 
 
     private void sendData( HttpServletResponse resp,Object obj) throws IOException {
