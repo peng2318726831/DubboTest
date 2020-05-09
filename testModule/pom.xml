@@ -38,6 +38,12 @@
 
     <build>
         <finalName>testModule</finalName>
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>boot</groupId>-->
+<!--                <artifactId>maven.c</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
     </build>
 
 </project>

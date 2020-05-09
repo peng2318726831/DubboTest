@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @ServletComponentScan
-@ImportResource({"classpath*:provider.xml"})
+@ImportResource({"classpath:provider.xml"})
 public class ApplicationStarter extends SpringBootServletInitializer {
 
     @Override

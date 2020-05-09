@@ -9,10 +9,8 @@ import com.pc.domain.ResultCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,8 +21,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/invoke/*", description = "拦截所有请求")
-@Controller
+//@WebServlet(urlPatterns = "/invoke/*", description = "拦截所有请求")
+@Component
 public class CommonServlet extends HttpServlet{
 
     private Logger LOGGER  = LoggerFactory.getLogger(CommonServlet.class);
@@ -32,10 +30,10 @@ public class CommonServlet extends HttpServlet{
     @Autowired
     private DubboBeanFacotory beanFactory;
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-    }
+//    @Override
+//    public void init() throws ServletException {
+//        super.init();
+//    }
 
     @Override
     public void service(HttpServletRequest req, HttpServletResponse resp)
